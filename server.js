@@ -11,16 +11,23 @@ const vpnRoutes = require("./routes/vpn");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Render runs behind a proxy
+app.set("trust proxy", 1);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(
   session({
-    secret: process.env.SESSION_SECRET || "change-this-secret",
+    name: "datasaver.sid",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
+
     cookie: {
-      secure: process.env.NODE_ENV === "production",
+      secure: true,
+      httpOnly: true,
+      sameSite: "lax",
       maxAge: 24 * 60 * 60 * 1000
     }
   })
