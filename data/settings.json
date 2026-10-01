@@ -1,0 +1,8 @@
+{
+  "dataSaver": true,
+  "adBlocking": true,
+  "trackerBlocking": true,
+  "imageOptimization": true,
+  "videoSaver": true,
+  "caching": true
+}
