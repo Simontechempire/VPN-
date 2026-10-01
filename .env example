@@ -1,0 +1,7 @@
+PORT=3000
+NODE_ENV=production
+
+SESSION_SECRET=replace-with-a-long-random-secret
+
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=change-this-password
