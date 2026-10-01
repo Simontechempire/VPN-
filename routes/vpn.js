@@ -1,5 +1,4 @@
 const express = require("express");
-
 const vpnService = require("../services/vpnService");
 
 const router = express.Router();
@@ -15,31 +14,60 @@ function requireAuth(req, res, next) {
   next();
 }
 
-router.get("/status", requireAuth, (req, res) => {
-  res.json({
-    success: true,
-    status: vpnService.getStatus()
-  });
+router.get("/status", requireAuth, async (req, res) => {
+  try {
+    const status = await vpnService.getStatus();
+
+    res.json({
+      success: true,
+      status
+    });
+  } catch (error) {
+    console.error("VPN STATUS ERROR:", error);
+
+    res.status(502).json({
+      success: false,
+      message: "VPN server is unavailable"
+    });
+  }
 });
 
-router.post("/on", requireAuth, (req, res) => {
-  const status = vpnService.enable();
+router.post("/on", requireAuth, async (req, res) => {
+  try {
+    const status = await vpnService.enable();
 
-  res.json({
-    success: true,
-    message: "Data Saver enabled",
-    status
-  });
+    res.json({
+      success: true,
+      message: "Data Saver enabled",
+      status
+    });
+  } catch (error) {
+    console.error("VPN ON ERROR:", error);
+
+    res.status(502).json({
+      success: false,
+      message: "Could not connect to the VPN server"
+    });
+  }
 });
 
-router.post("/off", requireAuth, (req, res) => {
-  const status = vpnService.disable();
+router.post("/off", requireAuth, async (req, res) => {
+  try {
+    const status = await vpnService.disable();
 
-  res.json({
-    success: true,
-    message: "Data Saver disabled",
-    status
-  });
+    res.json({
+      success: true,
+      message: "Data Saver disabled",
+      status
+    });
+  } catch (error) {
+    console.error("VPN OFF ERROR:", error);
+
+    res.status(502).json({
+      success: false,
+      message: "Could not connect to the VPN server"
+    });
+  }
 });
 
 module.exports = router;
