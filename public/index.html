@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Data Saver VPN</title>
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <header>
+    <h1>⚡ DATA SAVER VPN</h1>
+    <p>Control Panel</p>
+  </header>
+
+  <section class="status-card">
+
+    <div>
+      <span>VPN STATUS</span>
+      <strong id="vpnStatus">OFF</strong>
+    </div>
+
+    <div class="buttons">
+
+      <button
+        class="on"
+        onclick="setVPN('on')"
+      >
+        🟢 TURN ON
+      </button>
+
+      <button
+        class="off"
+        onclick="setVPN('off')"
+      >
+        🔴 TURN OFF
+      </button>
+
+    </div>
+
+  </section>
+
+  <section class="stats">
+
+    <div class="card">
+      <span>DATA SAVED</span>
+      <strong id="saved">0 MB</strong>
+    </div>
+
+    <div class="card">
+      <span>DATA USED</span>
+      <strong id="used">0 MB</strong>
+    </div>
+
+    <div class="card">
+      <span>USERS</span>
+      <strong id="users">0</strong>
+    </div>
+
+    <div class="card">
+      <span>UPTIME</span>
+      <strong id="uptime">0s</strong>
+    </div>
+
+  </section>
+
+  <section class="features">
+
+    <h2>DATA SAVER FEATURES</h2>
+
+    <div>🚫 Ad Blocking</div>
+    <div>🛡️ Tracker Blocking</div>
+    <div>🖼️ Image Optimization</div>
+    <div>🎥 Video Saver</div>
+    <div>💾 Smart Caching</div>
+
+  </section>
+
+  <button class="logout" onclick="logout()">
+    LOGOUT
+  </button>
+
+</div>
+
+<script src="/app.js"></script>
+
+</body>
+  </html>
