@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #080808;
+  color: white;
+}
+
+.container {
+  width: 92%;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 30px;
+}
+
+header p {
+  opacity: 0.7;
+}
+
+.status-card,
+.card,
+.features,
+.login-box {
+  background: #151515;
+  border: 1px solid #292929;
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.status-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.status-card span,
+.card span {
+  display: block;
+  opacity: 0.6;
+  font-size: 13px;
+}
+
+.status-card strong {
+  display: block;
+  font-size: 28px;
+  margin-top: 8px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 13px 18px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.on {
+  background: #18a558;
+  color: white;
+}
+
+.off {
+  background: #d63031;
+  color: white;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card strong {
+  display: block;
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+.features {
+  margin-top: 20px;
+}
+
+.features h2 {
+  margin-top: 0;
+}
+
+.features div {
+  padding: 12px 0;
+  border-bottom: 1px solid #292929;
+}
+
+.logout {
+  margin-top: 20px;
+  background: #333;
+  color: white;
+}
+
+.login-box {
+  width: 90%;
+  max-width: 400px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #0d0d0d;
+  color: white;
+}
+
+.login-box button {
+  width: 100%;
+  margin-top: 10px;
+  background: #18a558;
+  color: white;
+}
+
+#message {
+  margin-top: 15px;
+  color: #ff7675;
+}
+
+@media (max-width: 700px) {
+
+  .status-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  }
